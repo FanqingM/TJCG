@@ -1,31 +1,42 @@
 let textures =
 {
-    "pepe": ["https://raw.githubusercontent.com/Sopiro/js_bitmap_renderer/master/imgs/pepe.png", [512, 512]],
-    "dulri": ["https://raw.githubusercontent.com/Sopiro/js_bitmap_renderer/master/imgs/dulri.png", [256, 256]],
-    "container": ["https://raw.githubusercontent.com/Sopiro/js_bitmap_renderer/master/imgs/container2.png", [500, 500]],
-    // "skybox": ["https://raw.githubusercontent.com/Sopiro/js_bitmap_renderer/master/imgs/skybox.png", [1024, 768]],
-    // "skybox": ["https://raw.githubusercontent.com/Sopiro/js_bitmap_renderer/master/imgs/skybox2.png", [1024, 768]],
-    "skybox": ["https://raw.githubusercontent.com/Sopiro/js_bitmap_renderer/master/imgs/skybox3.png", [2048, 1536]],
-    "brickwall": ["https://raw.githubusercontent.com/Sopiro/js_bitmap_renderer/master/imgs/brickwall.png", [1024, 1024]],
-    "brickwall_normal": ["https://raw.githubusercontent.com/Sopiro/js_bitmap_renderer/master/imgs/brickwall_normal.png", [1024, 1024]],
-    "brick": ["https://raw.githubusercontent.com/Sopiro/js_bitmap_renderer/master/imgs/bricks3.png", [1024, 1024]],
-    "brick_normal": ["https://raw.githubusercontent.com/Sopiro/js_bitmap_renderer/master/imgs/bricks3_normal.png", [1024, 1024]],
-    "stone1": ["https://raw.githubusercontent.com/Sopiro/js_bitmap_renderer/master/imgs/stone1_diffuse.png", [1024, 1024]],
-    "stone1_normal": ["https://raw.githubusercontent.com/Sopiro/js_bitmap_renderer/master/imgs/stone1_normal.png", [1024, 1024]],
-    "stone2": ["https://raw.githubusercontent.com/Sopiro/js_bitmap_renderer/master/imgs/stone2_diffuse.jpg", [1024, 1024]],
-    "stone2_normal": ["https://raw.githubusercontent.com/Sopiro/js_bitmap_renderer/master/imgs/stone2_normal.jpg", [1024, 1024]],
+    "pepe": ["..//imgs//pepe.png", [512, 512]],
+    "dulri": ["..//imgs//dulri.png", [256, 256]],
+    "wukong": ["..//imgs//wukong.png",[600,600]],
+    "container": ["..//imgs//container2.png", [500, 500]],
+    // "skybox": ["..//imgs//skybox.png", [1024, 768]],
+    //"skybox": ["..//imgs//skybox2.png", [1024, 768]],
+    "skybox": ["..//imgs//room2.jpeg", [1025, 670]],
+    // "skybox": ["..//imgs//skybox3.png", [2048, 1536]],
+    "brickwall": ["..//imgs//brickwall.png", [1024, 1024]],
+    "brickwall_normal": ["..//imgs//brickwall_normal.png", [1024, 1024]],
+    "brick": ["..//imgs//bricks3.png", [1024, 1024]],
+    "brick_normal": ["..//imgs//bricks3_normal.png", [1024, 1024]],
+    "stone1": ["..//imgs//stone1_diffuse.png", [1024, 1024]],
+    "stone1_normal": ["..//imgs//stone1_normal.png", [1024, 1024]],
+    "stone2": ["..//imgs//stone2_diffuse.jpg", [1024, 1024]],
+    "stone2_normal": ["..//imgs//stone2_normal.jpg", [1024, 1024]],
+    "xuehua":["..//imgs//xuehua.jpeg", [1024,1024]],
+    "santa":["..//imgs//santa.jpeg", [641,641]],
+    "snow":["..//imgs//snow.jpeg", [3840,2160]],
+    "santatree":["..//imgs//santatree.jpeg", [768,1024]],
+    "gift":["..//imgs//gift.jpeg", [320,320]],
+    "lightball":["..//imgs//lightball.jpeg", [522,549]],
+    "floor":["..//imgs//floor.jpeg", [310,310]]
+
 };
 
 let models =
 {
-    "cube": "https://raw.githubusercontent.com/Sopiro/js_bitmap_renderer/master/models/cube.obj",
-    "sphere": "https://raw.githubusercontent.com/Sopiro/js_bitmap_renderer/master/models/sphere.obj",
-    "sphere2": "https://raw.githubusercontent.com/Sopiro/js_bitmap_renderer/master/models/sphere2.obj",
-    "monkey": "https://raw.githubusercontent.com/Sopiro/js_bitmap_renderer/master/models/monkey2.obj",
+    "cube": "..//models//cube.obj",
+    "sphere": "..//models//sphere.obj",
+    "sphere2": "..//models//sphere2.obj",
+    "monkey": "..//models//monkey2.obj",
     "man": "./models/man.obj",
     "tree": "./models/tree.obj",
-    "ball": "./models/ball.obj"
-    // "tree": "https://github.com/FanqingM/CG-SoftwareRenderer/blob/main/models/tree.obj"
+    "ball": "./models/ball.obj",
+    "sofa":"./models/Koltuk.obj",
+    "invader":"./models/Invader.obj"
 };
 
 export { models, textures};

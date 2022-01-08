@@ -89,98 +89,70 @@ export class View extends Bitmap
     renderScene()
     {
         const r = new Random(123);
-
         const s = 30.0;
 
         this.renderFlag = 0;
-        for (let i = 0; i < 20; i++)
-        {
-            if (i % 2 == 0) this.setTexture(Resources.textures.pepe, Resources.textures.brick_normal);
-            else this.setTexture(Resources.textures.dulri, Resources.textures.stone2_normal);
 
-            const pos = new Vector3(r.nextFloat() * s - s / 2.0, r.nextFloat() * s - s / 2.0, r.nextFloat() * s - s / 2.0);
-            const rot = new Vector3(this.time / 5 * (i % 3), this.time / 10.0 * (i % 5), this.time / 5 * (i % 7));
-            const scale = new Vector3(0.5);
-            this.transform = Util.createTransformMatrix(pos, rot, scale);
 
-            this.drawModel(Resources.models.cube);
-        }
-
-        // this.drawTriangle(new Vertex(new Vector3(0, 0, -1), 0xfffffff, new Vector2(0, 1)),
-        //  new Vertex(new Vector3(0, 0, -2), 0xfffffff, new Vector2(0, 0)),
-        //   new Vertex(new Vector3(1, 0, -2), 0xfffffff, new Vector2(1, 0)), Resources.textures.container);
-
-        // this.drawPoint(new Vertex(new Vector3(0, 0, 0), 0xff00ff));
-
-        // renderFlag = RENDER_FACE_NORMAL;
-        // this.drawLine(new Vertex(this.sunPosRelativeToZero.mul(3).add(new Vector3(0, 0, -3)), 0xff0000), new Vertex(new Vector3(0, 0, -3), 0x00ff00));
-
-        // this.drawPoint(new Vertex(this.sunPosRelativeToZero.mul(3), 0xffffff));
-        // this.drawLine(new Vertex(new Vector3(-3, -3, -3), 0xff0000), new Vertex(new Vector3(5, 2, -8), 0x00ff00));
-
+        //背景构图
         this.drawSkyBox(this.time / 100.0);
 
         this.renderFlag = 0;
-        this.transform = new Matrix4().translate(2, 1, -5);
-        // this.transform = new Matrix4().translate(2, 1, -5).rotate(time, 0, time);
-        this.setTexture(Resources.textures.pepe, undefined, 100);
-        this.drawModel(Resources.models.sphere2);
-
-        this.drawSkyBox(this.time / 100.0);
-
-        this.renderFlag = 0;
-        this.transform = new Matrix4().translate(5, 3, -10);
-        // this.transform = new Matrix4().translate(2, 1, -5).rotate(time, 0, time);
-        this.setTexture(Resources.textures.pepe, undefined, 100);
-        this.drawModel(Resources.models.monkey);
-
-        this.renderFlag = 0;
-        this.transform = new Matrix4().translate(10, 6, -15);
-        // this.transform = new Matrix4().translate(2, 1, -5).rotate(time, 0, time);
+        //渲染树模型
+        this.transform = new Matrix4().translate(10, 0, -15).rotate(0,this.time/10,0).scale(0.5,0.5,0.5);
+        this.setTexture(Resources.textures.santatree, undefined, 10.0);
+        this.drawModel(Resources.models.tree);
+        
+        this.transform = new Matrix4().translate(0, 0, -25).rotate(0,this.time/10,0).scale(1.2,1.2,1.2);
+        this.setTexture(Resources.textures.santa, undefined, 10.0);
         this.drawModel(Resources.models.tree);
 
-        // this.transform = new Matrix4().translate(-2, 1, -5);
-        this.transform = new Matrix4().translate(-2, 1, -5);
-        // this.transform = this.transform.rotate(0, time, 0);
-        this.transform = this.transform.scale(1);
-        // this.setTexture(Resources.textures.brickwall, Resources.textures.brickwall_normal);
-        this.setTexture(Resources.textures.stone2, Resources.textures.stone2_normal, 10.0);
-        this.drawModel(Resources.models.cube);
-
-        this.transform = new Matrix4().translate(-2, 0, -10);
-        // this.transform = this.transform.rotate(0, time, 0);
-        this.transform = this.transform.scale(0.5);
-        // this.setTexture(Resources.textures.brickwall, Resources.textures.brickwall_normal);
-        this.setTexture(Resources.textures.white);
+        this.transform = new Matrix4().translate(-5, 0, -5).rotate(0,this.time/10,0).scale(0.8,0.8,0.8);
+        this.setTexture(Resources.textures.santatree, undefined, 10.0);
+        this.drawModel(Resources.models.tree);
+        
+        //渲染人
+        this.transform = new Matrix4().translate(5, 4, -10).scale(0.5,0.5,0.5)
+        this.setTexture(Resources.textures.xuehua, undefined, 100);
         this.drawModel(Resources.models.man);
 
-        this.transform = new Matrix4().translate(2, 2, -10);
-        // this.transform = this.transform.rotate(0, time, 0);
-        this.transform = this.transform.scale(1);
-        // this.setTexture(Resources.textures.brickwall, Resources.textures.brickwall_normal);
-        this.setTexture(Resources.textures.brick, Resources.textures.brick_normal, 10.0);
+        //渲染方盒模型
+        this.transform = new Matrix4().translate(-2, 1, -5).scale(0.7,0.7,0.7);
+        this.setTexture(Resources.textures.gift, undefined, 10.0);
         this.drawModel(Resources.models.cube);
 
-        this.transform = new Matrix4().translate(1, 3, -20);
-        // this.transform = this.transform.rotate(0, time, 0);
-        this.transform = this.transform.scale(1);
-        // this.setTexture(Resources.textures.brickwall, Resources.textures.brickwall_normal);
-        this.setTexture(Resources.textures.brick, Resources.textures.brick_normal, 10.0);
+        this.transform = new Matrix4().translate(-0.5, 1, -5).scale(0.7,0.7,0.7);
+        this.setTexture(Resources.textures.gift, undefined, 10.0);
+        this.drawModel(Resources.models.cube);
+
+        this.transform = new Matrix4().translate(-1, 1, -3.5).scale(0.7,0.7,0.7);
+        this.setTexture(Resources.textures.snow, undefined, 10.0);
+        this.drawModel(Resources.models.cube);
+
+        this.transform = new Matrix4().translate(-0.8,2.2,-4).scale(0.5,0.5,0.5);
+        this.setTexture(Resources.textures.santa, Resources.textures.brickwall_normal, 10.0);
+        this.drawModel(Resources.models.cube);
+
+
+        //渲染球模型
+        this.transform = new Matrix4().translate(5, 15, 0).rotate(this.time/5,this.time/10,this.time/20).scale(1.2,1.2,1.2)
+        this.setTexture(Resources.textures.lightball, undefined, 100)
+        this.drawModel(Resources.models.sphere2);
+
+        this.transform = new Matrix4().translate(8, 15, -5).rotate(this.time/5,this.time/10,this.time/20);
+        this.setTexture(Resources.textures.gift, Resources.textures.brick_normal, 10.0);
         this.drawModel(Resources.models.sphere);
 
-        // this.transform = new Matrix4().translate(-1, -1, -2);
-        // this.transform = this.transform.scale(2);
-        // // this.transform = this.transform.rotate(0, -time / 10, 0);
-        // this.setTexture(Resources.textures.brickwall, Resources.textures.brickwall_normal, 0.5);
-        // const f = new Face(
-        //     new Vertex(new Vector3(0, 0, 0), 0xffffff, new Vector2(0, 0)),
-        //     new Vertex(new Vector3(0, 1, 0), 0xffffff, new Vector2(0, 1)),
-        //     new Vertex(new Vector3(1, 1, 0), 0xffffff, new Vector2(1, 1)));
 
-        // f.calcNormal();
-        // f.calcTangentAndBiTangent();
+        //渲染地板
+        this.setTexture(Resources.textures.floor, undefined, 10.0);
+        for(let i=0;i<20;i++){
+            for(let j=0;j<25;j++){
+                this.transform=new Matrix4().translate(i-10,-0.2,j-25).scale(2,0.1,2)
+                this.drawModel(Resources.models.cube)
+            }
+        }
 
-        // this.drawFace(f);
     }
 
     postProcess(postprocessEnabled)
@@ -221,7 +193,6 @@ export class View extends Bitmap
             this.pixels = result;
         }
 
-        // Vignette & pixel noise
         // 插图和像素噪声
         if (postprocessEnabled[2] || postprocessEnabled[3])
         {
@@ -490,7 +461,7 @@ export class View extends Bitmap
         // Render Face normal
         if ((this.renderFlag & this.RENDER_FACE_NORMAL) == this.RENDER_FACE_NORMAL)
         {
-            this.drawLine(new Vertex(center, 0xffffff), new Vertex(center.add(v0.normal.add(v1.normal).add(v2.normal).normalized().mul(0.2)), 0xff00ff));
+            this.drawLine(new Vertex(center, 0xffffff), new Vertex(center.add(v0.normal.aSdd(v1.normal).add(v2.normal).normalized().mul(0.2)), 0xff00ff));
         }
 
         // Render Vertex normal
