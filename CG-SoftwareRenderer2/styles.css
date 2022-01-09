@@ -20,15 +20,20 @@ canvas {
 }
 
 .body {
-    display: flex;
-    width: 800px;
+    display: inline-block;
+    width: 100%;
+
 }
 
+.body2{
+    display:inline-block;
+}
 .resbox {
     margin-left: 4px;
-    display: flex;
+    margin-top:4px;
+    display:inline-block;
     width: 800px;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .opt {
@@ -38,7 +43,11 @@ canvas {
     border-radius: 8px;
     text-align: center;
     vertical-align: middle;
-    width: 20px;
+    width: 80px;
+    height:30px;
+}
+.opt:hover{
+    cursor: pointer;
 }
 
 h3 {
@@ -47,4 +56,69 @@ h3 {
 
 a {
     color: cornflowerblue;
+}
+
+.dropbtn {
+    background: rgba(236, 223, 166, 0.7);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    color: black;
+    padding: 6px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin:5px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    border-radius: 10px;
+    display: none;
+    position: absolute;
+    background-color:rgba(0,0,0,0.5);
+    min-width: 90px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content2 {
+    border-radius: 10px;
+    display: none;
+    position: absolute;
+    background-color:rgba(0,0,0,0.5);
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    color:aliceblue;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content2 a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropdown-content2 {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background: #70706d;
+    color: #fff;
+    border-radius: 5px;
+    cursor:pointer;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
 }

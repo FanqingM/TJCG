@@ -31,8 +31,8 @@ export class Game
 
         this.keys = {};
         this.mouse = { down: false, lastX: 0.0, lastY: 0.0, currX: 0.0, currY: 0.0, dx: 0.0, dy: 0.0 };
-
-        this.postprocessEnabled = [false, false, true, false, false];
+        //滤镜
+        this.postprocessEnabled = [false, false, false, false, false];
     }
 
     start()
@@ -76,8 +76,8 @@ export class Game
             this.tmpCvs.width = Constants.WIDTH;
             this.tmpCvs.height = Constants.HEIGHT;
 
-            for (const btn of this.resBtns) btn.style.backgroundColor = "white";
-            this.resBtns[index].style.backgroundColor = "black";
+            for (const btn of this.resBtns) btn.style.backgroundColor = "aliceblue";
+            this.resBtns[index].style.backgroundColor = "green";
         }
 
         for (let i = 0; i < this.resBtns.length; i++)
@@ -86,25 +86,64 @@ export class Game
             btn.onclick = () => reloadView.bind(this)(i);
         }
 
-        this.resBtns[Constants.SCALE_INDEX].style.backgroundColor = "black";
+        this.resBtns[Constants.SCALE_INDEX].style.backgroundColor = "green";
 
         this.pspBtns.push(document.getElementById("psp1"));
         this.pspBtns.push(document.getElementById("psp2"));
-        this.pspBtns.push(document.getElementById("psp3"));
-        this.pspBtns.push(document.getElementById("psp4"));
-        this.pspBtns.push(document.getElementById("psp5"));
+        // this.pspBtns.push(document.getElementById("psp3"));
+        // this.pspBtns.push(document.getElementById("psp4"));
+        // this.pspBtns.push(document.getElementById("psp5"));
 
         function setPostProcess(index)
         {
-            this.postprocessEnabled[index] = !this.postprocessEnabled[index];
-            this.pspBtns[index].style.backgroundColor = this.postprocessEnabled[index] ? "black" : "white";
+            if(index==0)
+            { 
+                if(this.pspBtns[0].style.backgroundColor=="aliceblue")
+               {
+                    this.pspBtns[0].style.backgroundColor="green";
+                    this.pspBtns[1].style.backgroundColor="aliceblue";
+                    this.postprocessEnabled[0] = false;
+                    this.postprocessEnabled[1] = true;
+                    this.postprocessEnabled[2] = false;
+                    this.postprocessEnabled[3] = false;
+                    this.postprocessEnabled[4] = true;
+                }
+                else{
+                    for(let i=0;i<5;i++)
+                    {
+                        this.postprocessEnabled[i] = false;
+                        this.pspBtns[0].style.backgroundColor="aliceblue";
+                    }  
+                }
+            }
+            else if(index==1)
+            {
+                if(this.pspBtns[1].style.backgroundColor=="aliceblue")
+                {
+                    this.pspBtns[1].style.backgroundColor="green";
+                    this.pspBtns[0].style.backgroundColor="aliceblue";
+                    this.postprocessEnabled[0] = false;
+                    this.postprocessEnabled[1] = false;
+                    this.postprocessEnabled[2] = true;
+                    this.postprocessEnabled[3] = true;
+                    this.postprocessEnabled[4] = true;
+                 }
+                 else{
+                     for(let i=0;i<5;i++)
+                     {
+                         this.postprocessEnabled[i] = false;
+                         this.pspBtns[1].style.backgroundColor="aliceblue";
+                     }  
+                 }
+                
+            }
         }
 
         for (let i = 0; i < this.pspBtns.length; i++)
         {
             const btn = this.pspBtns[i];
             btn.onclick = () => setPostProcess.bind(this)(i);
-            if (this.postprocessEnabled[i]) btn.style.backgroundColor = "black";
+
         }
 
         //以上是游戏的基本布局，包括画板，按钮等
@@ -142,7 +181,7 @@ export class Game
                         let back = this.tmpGfx.getImageData(size * 3, size, size, size);
                         let right = this.tmpGfx.getImageData(size * 2, size, size, size);
                         let left = this.tmpGfx.getImageData(0, size, size, size);
-
+                    //背景图渲染
                         Resources.textures["skybox_top"] = Util.convertImageDataToBitmap(top, size, size);
                         Resources.textures["skybox_bottom"] = Util.convertImageDataToBitmap(bottom, size, size);
                         Resources.textures["skybox_front"] = Util.convertImageDataToBitmap(front, size, size);

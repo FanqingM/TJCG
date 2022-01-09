@@ -10,6 +10,7 @@
     <script src="http://www.yanhuangxueyuan.com/threejs/build/three.js"></script>
 </head>
 
+
 <body>
 <div class="head">
     <p class="title">3D Software Renderer</p>
@@ -19,37 +20,45 @@
 <br>
 <div class="body">
     <canvas id="canvas" width="800px" height="600px"></canvas>
-    <div class="resbox">
-        <div class="opt" id="res1"></div>
-        <div class="opt" id="res2"></div>
-        <div class="opt" id="res4"></div>
-        <div class="opt" id="res5"></div>
-        <div class="opt" id="res8"></div>
-        <div class="opt" id="res10"></div>
-        <div class="opt" id="res20"></div>
-    </div>
-    <div class="resbox">
-        <div class="opt" id="psp1"></div>
-        <div class="opt" id="psp2"></div>
-        <div class="opt" id="psp3"></div>
-        <div class="opt" id="psp4"></div>
-        <div class="opt" id="psp5"></div>
-    </div>
-    <div class="body2">
+    <div class="body2" width="800px",height="450px"></canvas>
+    <div class="dropdown">
+        <button class="dropbtn">清晰度</button>
+        <div class="dropdown-content">
+            <div class="opt" id="res1">1pxiel</div>
+            <div class="opt" id="res2">2pxiels</div>
+            <div class="opt" id="res4">4pixels</div>
+            <div class="opt" id="res5">5pixels</div>
+            <div class="opt" id="res8">8pixels</div>
+            <div class="opt" id="res10">10pixels</div>
+            <div class="opt" id="res20">20pixels</div>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">滤镜</button>
+        <div class="dropdown-content">
+            <div class="opt" id="psp1">赛博朋克</div>
+            <div class="opt" id="psp2">朦胧</div>
+        </div>
+      </div>
+      <div class="dropdown">
+          <button class="dropbtn">操作说明</button>
+          <div class="dropdown-content2">
+            <p>移动：使用WASD或上下左右</p>
+            <p>视角转动：鼠标拖拽或q e</p>
+            <p>上下移动：空格：上移 c：下移</p>
+            <p>注意：可选择清晰度、滤镜</p>
+          </div>
+      </div>
+ 
 
     </div>
 </div>
-<div class="foot">
-    <h3>{w, a, s, d, space, c} to Move</h3>
-    <h3>{click and drag} to Rotate around</h3>
-    <h3>{Esc} to Pause</h3>
-    <h3><a href="https://github.com/Sopiro/js_bitmap_renderer">Source</a></h3>
-</div>
+
 <script>
     //创建渲染器，添加到dom当中, antialias（是否启用抗锯齿）
     var renderer = new THREE.WebGLRenderer({antialias: true});
     //设置渲染器的尺寸
-    renderer.setSize(window.innerWidth/4, window.innerHeight/4);
+    renderer.setSize(800, 450);
     //将渲染器放置到页面当中
     let x = document.getElementsByClassName("body2")
     document.body.appendChild(renderer.domElement);

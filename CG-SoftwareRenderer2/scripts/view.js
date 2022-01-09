@@ -112,24 +112,24 @@ export class View extends Bitmap
         this.drawModel(Resources.models.tree);
         
         //渲染人
-        this.transform = new Matrix4().translate(5, 4, -10).scale(0.5,0.5,0.5)
+        this.transform = new Matrix4().translate(5, 3.2, -10).scale(0.5,0.5,0.5)
         this.setTexture(Resources.textures.xuehua, undefined, 100);
         this.drawModel(Resources.models.man);
 
         //渲染方盒模型
-        this.transform = new Matrix4().translate(-2, 1, -5).scale(0.7,0.7,0.7);
+        this.transform = new Matrix4().translate(-2, 0.4, -5).scale(0.7,0.7,0.7);
         this.setTexture(Resources.textures.gift, undefined, 10.0);
         this.drawModel(Resources.models.cube);
 
-        this.transform = new Matrix4().translate(-0.5, 1, -5).scale(0.7,0.7,0.7);
+        this.transform = new Matrix4().translate(-0.5, 0.4, -5).scale(0.7,0.7,0.7);
         this.setTexture(Resources.textures.gift, undefined, 10.0);
         this.drawModel(Resources.models.cube);
 
-        this.transform = new Matrix4().translate(-1, 1, -3.5).scale(0.7,0.7,0.7);
+        this.transform = new Matrix4().translate(-1, 0.4, -3.5).scale(0.7,0.7,0.7);
         this.setTexture(Resources.textures.snow, undefined, 10.0);
         this.drawModel(Resources.models.cube);
 
-        this.transform = new Matrix4().translate(-0.8,2.2,-4).scale(0.5,0.5,0.5);
+        this.transform = new Matrix4().translate(-0.8,1.6,-4).scale(0.5,0.5,0.5);
         this.setTexture(Resources.textures.santa, Resources.textures.brickwall_normal, 10.0);
         this.drawModel(Resources.models.cube);
 
@@ -148,7 +148,7 @@ export class View extends Bitmap
         this.setTexture(Resources.textures.floor, undefined, 10.0);
         for(let i=0;i<20;i++){
             for(let j=0;j<25;j++){
-                this.transform=new Matrix4().translate(i-10,-0.2,j-25).scale(2,0.1,2)
+                this.transform=new Matrix4().translate(i-10,-0.5,j-25).scale(2,0.1,2)
                 this.drawModel(Resources.models.cube)
             }
         }
